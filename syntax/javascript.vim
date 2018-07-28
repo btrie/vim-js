@@ -43,21 +43,20 @@ syn region  javaScriptRegexpString     start=+/[^/*]+me=e-1 skip=+\\\\\|\\/+ end
 syn keyword javaScriptConditional	if else switch
 syn keyword javaScriptRepeat		while for do in
 syn keyword javaScriptBranch		break continue
-syn keyword javaScriptOperator		new delete instanceof typeof
+syn keyword javaScriptOperator		new delete instanceof typeof await
 syn keyword javaScriptType		Array Boolean Date Function Number Object String RegExp Promise
 syn keyword javaScriptStatement		return with
 syn keyword javaScriptBoolean		true false
 syn keyword javaScriptNull		null undefined
-syn keyword javaScriptIdentifier	arguments this var let
+syn keyword javaScriptIdentifier	arguments this var let const
 syn keyword javaScriptLabel		case default
 syn keyword javaScriptException		try catch finally throw
 syn keyword javaScriptMessage		alert confirm prompt status
 syn keyword javaScriptGlobal		self window top parent
-syn keyword javaScriptMember		document event location 
+syn keyword javaScriptMember		document event location
 syn keyword javaScriptDeprecated	escape unescape
-syn keyword javaScriptReserved		abstract boolean byte char class const debugger double enum export extends final float goto implements import int interface long native package private protected public short static super synchronized throws transient volatile 
+syn keyword javaScriptReserved		abstract boolean byte char class debugger double enum export extends final float goto implements import int interface long native package private protected public short static super synchronized throws transient volatile 
 
-syn keyword javaScriptAsync		async await
 
 if exists("javaScript_fold")
     syn match	javaScriptFunction	"\<function\>"
@@ -69,7 +68,7 @@ if exists("javaScript_fold")
     setlocal foldmethod=syntax
     setlocal foldtext=getline(v:foldstart)
 else
-    syn keyword javaScriptFunction	function
+    syn keyword javaScriptFunction	async function
     syn match	javaScriptBraces	   "[{}\[\]]"
     syn match	javaScriptParens	   "[()]"
 endif
@@ -116,8 +115,6 @@ hi def link javaScriptDeprecated		Exception
 hi def link javaScriptReserved		Keyword
 hi def link javaScriptDebug		Debug
 hi def link javaScriptConstant		Label
-
-hi def link javaScriptAsync		Keyword
 
 
 let b:current_syntax = "javascript"
