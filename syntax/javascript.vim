@@ -41,21 +41,24 @@ syn match   javaScriptNumber	       "-\=\<\d\+L\=\>\|0[xX][0-9a-fA-F]\+\>"
 syn region  javaScriptRegexpString     start=+/[^/*]+me=e-1 skip=+\\\\\|\\/+ end=+/[gimuys]\{0,2\}\s*$+ end=+/[gimuys]\{0,2\}\s*[;.,)\]}]+me=e-1 contains=@htmlPreproc oneline
 
 syn keyword javaScriptConditional	if else switch
-syn keyword javaScriptRepeat		while for do in
+syn keyword javaScriptRepeat		while for do in of
 syn keyword javaScriptBranch		break continue
-syn keyword javaScriptOperator		new delete instanceof typeof await
+syn keyword javaScriptOperator		new delete instanceof typeof await yield
 syn keyword javaScriptType		Array Boolean Date Function Number Object String RegExp Promise
 syn keyword javaScriptStatement		return with
 syn keyword javaScriptBoolean		true false
 syn keyword javaScriptNull		null undefined
-syn keyword javaScriptIdentifier	arguments this var let const
+syn keyword javaScriptIdentifier	arguments var let const
 syn keyword javaScriptLabel		case default
 syn keyword javaScriptException		try catch finally throw
 syn keyword javaScriptMessage		alert confirm prompt status
 syn keyword javaScriptGlobal		self window top parent
 syn keyword javaScriptMember		document event location
 syn keyword javaScriptDeprecated	escape unescape
-syn keyword javaScriptReserved		abstract boolean byte char class debugger double enum export extends final float goto implements import int interface long native package private protected public short static super synchronized throws transient volatile 
+syn keyword javaScriptReserved		abstract boolean byte char debugger double enum final float goto implements int interface long native package private protected public short static synchronized throws transient volatile
+syn keyword javaScriptModule            import export as from
+syn keyword javaScriptClass             class extends
+syn keyword javaScriptTypedef           super this
 
 
 if exists("javaScript_fold")
@@ -115,6 +118,9 @@ hi def link javaScriptDeprecated		Exception
 hi def link javaScriptReserved		Keyword
 hi def link javaScriptDebug		Debug
 hi def link javaScriptConstant		Label
+hi def link javaScriptModule		Include
+hi def link javaScriptClass		Structure
+hi def link javaScriptTypedef           Typedef
 
 
 let b:current_syntax = "javascript"
