@@ -53,8 +53,8 @@ syn keyword javaScriptNull		null undefined
 syn keyword javaScriptIdentifier	arguments var let const
 syn keyword javaScriptLabel		case default
 syn keyword javaScriptException		try catch finally throw
-syn keyword javaScriptMessage		alert confirm prompt status
-syn keyword javaScriptGlobal		self window top parent
+syn keyword javaScriptMessage		alert confirm prompt
+syn keyword javaScriptGlobal		self window
 syn keyword javaScriptMember		document event location
 syn keyword javaScriptDeprecated	escape unescape
 syn keyword javaScriptReserved		abstract boolean byte char debugger double enum final float goto implements int interface long native package private protected public short static synchronized throws transient volatile
